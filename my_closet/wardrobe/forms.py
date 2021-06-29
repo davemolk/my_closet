@@ -10,5 +10,6 @@ class ItemForm(forms.ModelForm):
             "name": "Item Name",
             "description": "Item Description",
             "image": "Image of Item",
+            "tag": "Make sure to select Top, Bottom, Dress, Shoes, or Outerwear",
             "sell": "For Sale?"
         }
