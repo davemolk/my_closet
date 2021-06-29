@@ -1,10 +1,10 @@
 from django import forms
 
-from .models import Clothing
+from .models import Item
 
-class ClothingForm(forms.ModelForm):
+class ItemForm(forms.ModelForm):
     class Meta:
-        model = Clothing
+        model = Item
         fields = '__all__'
         labels = {
             "name": "Item Name",

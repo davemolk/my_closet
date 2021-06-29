@@ -26,7 +26,7 @@ class User(models.Model):
     def __str__(self):
         return self.full_name()
 
-class Clothing(models.Model):
+class Item(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=300, blank=True, null=True)
     image = models.ImageField(upload_to="images", null=True)
@@ -41,7 +41,7 @@ class Outfit(models.Model):
     description = models.TextField(max_length=300, blank=True, null=True)
     outfit_tag = models.ManyToManyField(OutfitTag)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="outfits")
-    clothing = models.ForeignKey(Clothing, null=True, on_delete=models.CASCADE, related_name="outfits")
+    item = models.ForeignKey(Item, null=True, on_delete=models.CASCADE, related_name="outfits")
 
     def __str__(self):
         return self.name
